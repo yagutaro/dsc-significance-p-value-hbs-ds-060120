@@ -3,14 +3,13 @@
 
 ## Introduction
 
-In this lesson, you'll learn more about some of the ideas mentioned in earlier lessons around interpreting the significance of results. You'll learn that associating a confidence level to our model's output is be very important during decision making, and an essential part of data science.
+In this lesson, you'll learn more about some of the ideas mentioned in earlier lessons around interpreting the significance of results. You'll learn that associating a confidence level to our model's output is very important during decision making and an essential part of data science.
 
 ## Objectives
 
 You will be able to:
 
-* Interpret p-values and regression coefficients
-* Describe model suitability in terms of obtained significance results
+* Evaluate a linear regression model by using statistical performance metrics pertaining to overall model and specific parameters
 
 ## Let's get started
 The ideas of hypothesis testing can be applied to regression, as well as statistical inference. For now, You'll learn about how it works in regression, and we'll spend time on formal hypothesis testing in a variety of contexts later on.
@@ -35,9 +34,9 @@ You see that we used the word _significant_ and _significantly_. What does this 
 
 When performing statistical analyses, rejecting or not rejecting a null hypothesis always goes along with an associated **significance level** or **p-value**.
 
-> p-value represents a **probability of observing your results (or something more extreme) given that the null hypothesis is true**
+> The p-value represents a **probability of observing your results (or something more extreme) given that the null hypothesis is true**
  
-Applied to a regression model, p-values associated with coefficients estimates indicates the probability of observing the associated coefficient given that the null-hypothesis is true. As a result, very small p-values indicate that coefficients are **statistically significant**. A very commonly used cut-off value for the p-value is 0.05. If your p-value is smaller than 0.05, you would say:
+Applied to a regression model, p-values associated with coefficients estimates indicate the probability of observing the associated coefficient given that the null-hypothesis is true. As a result, very small p-values indicate that coefficients are **statistically significant**. A very commonly used cut-off value for the p-value is 0.05. If your p-value is smaller than 0.05, you would say:
 
 > The parameter is statistically significant at $\alpha$ level 0.05. 
 
@@ -150,9 +149,9 @@ model.summary()
 
 2. In the plane with the coefficient estimates, p-values are in the column `P > |t|` and rounded to 3 digits (hence 0.000 for Intercept and TV). You can find the confidence intervals in the two last columns: The confidence interval for intercept is [6,13, 7.935] meaning that there is a 95% chance that the actual coefficient value is in that range. For TV, there is a 95% chance that the actual coefficient value is in the interval [0.042, 0.053]. Note that 0 is in none of these intervals as expected given the very low p-value.
 
-Note that the alpha level of 0.05 is just a convention. You'll come across alpha levels of 0.1 and 0,001. Note that the confidence intervals change too as alpha levels change (to 90% and 99% confidence intervals, yet the standard output of statsmodels is a 95% confidence interval). 
+Note that the alpha level of 0.05 is just a convention. You'll come across alpha levels of 0.1 and 0.001. Note that the confidence intervals change too as alpha levels change (to 90% and 99% confidence intervals, yet the standard output of statsmodels is a 95% confidence interval). 
 
-Try running above and check for p-values for `radio` and see how would interpret the outcome. 
+Try running the above and check for p-values for `radio` and see how would interpret the outcome. 
 
 ## Additional Resources
 
